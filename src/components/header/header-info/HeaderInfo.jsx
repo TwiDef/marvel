@@ -1,5 +1,6 @@
 import React from 'react';
-import Thumbnail from './../../../resources/img/Thumbnail.png'
+import Thumbnail from './../../../resources/img/Thumbnail.png';
+import Button from '../../button/Button';
 import './HeaderInfo.css';
 
 const HeaderInfo = (props) => {
@@ -15,8 +16,8 @@ const HeaderInfo = (props) => {
                         As the Norse God of thunder and lightning, Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir. While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate...
                     </p>
                     <div className="headerInfo-btns">
-                        <button>btn</button>
-                        <button>btn</button>
+                        <Button color="#9F0013" text="HOMEPAGE" />
+                        <Button text="WIKI" />
                     </div>
                 </div>
             </div>
@@ -29,7 +30,7 @@ const HeaderInfo = (props) => {
                 <h4 className='headerInfo-title'>
                     Or choose another one
                 </h4>
-                <button>btn</button>
+                <Button color="#9F0013" text="TRY IT" />
             </div>
         </div>
     );

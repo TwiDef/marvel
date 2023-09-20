@@ -1,0 +1,23 @@
+button {
+    padding: 10px 0 11px;
+    width: 101px;
+    height: 38px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 85% 100%, 0% 100%);
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+

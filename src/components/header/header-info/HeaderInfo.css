@@ -16,12 +16,22 @@
 .headerInfo-text {
     font-size: 14px;
     font-weight: 500;
+    line-height: 14px;
 }
 
 .headerInfo-descr {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.headerInfo-btns {
+    display: flex;
     justify-content: space-between;
+}
+
+.headerInfo-btns:nth-last-child(1) {
+    margin-right: 20px;
 }
 
 .headerInfo-right{
@@ -30,6 +40,6 @@
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 28px;
     padding: 40px;
 }

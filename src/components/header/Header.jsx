@@ -13,7 +13,6 @@ const Header = (props) => {
                 </div>
             </div>
 
-
             <HeaderInfo />
         </div>
     );
