@@ -1,0 +1,16 @@
+.header {
+    
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.header-text__red {
+    color: #9F0013;
+
+}
