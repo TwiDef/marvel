@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.25);
-
+    position: relative;
 }
 
 .headerInfo-left {
@@ -22,7 +22,7 @@
 .headerInfo-descr {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .headerInfo-btns {
@@ -40,6 +40,18 @@
     color: white;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 27px;
     padding: 40px;
+}
+
+.header-bgimg__first {
+    position: absolute;
+    top: 66px;
+    right: -24px;
+}
+
+.header-bgimg__second {
+    position: absolute;
+    top: 146px;
+    right: 77px;
 }

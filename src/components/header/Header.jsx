@@ -9,7 +9,7 @@ const Header = (props) => {
                 <div className='header-text'>
                     <span className='header-text__red'>Marvel</span> <span>information portal</span></div>
                 <div className='header-text'>
-                    <span className='header-text__red'>Characters</span> / <span>Comics</span>
+                    <a href='#' className='header-text__red'>Characters</a> / <a href='#'>Comics</a>
                 </div>
             </div>
 

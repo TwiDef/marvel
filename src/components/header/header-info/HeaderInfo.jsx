@@ -1,6 +1,9 @@
 import React from 'react';
-import Thumbnail from './../../../resources/img/Thumbnail.png';
 import Button from '../../button/Button';
+import Thumbnail from './../../../resources/img/Thumbnail.png';
+import Mjolhir from './../../../resources/img/mjolnir.png';
+import Shield from './../../../resources/img/shield.png';
+
 import './HeaderInfo.css';
 
 const HeaderInfo = (props) => {
@@ -31,7 +34,11 @@ const HeaderInfo = (props) => {
                     Or choose another one
                 </h4>
                 <Button color="#9F0013" text="TRY IT" />
+
             </div>
+
+            <img className='header-bgimg__first' src={Mjolhir} alt="" />
+            <img className='header-bgimg__second' src={Shield} alt="" />
         </div>
     );
 }

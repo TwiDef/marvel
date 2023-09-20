@@ -1,0 +1,33 @@
+.char-card {
+    width: 200px;
+    height: 318px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.45);
+    transition: 0.2s all;
+    cursor: pointer;
+}
+
+.char-card:hover {
+    -webkit-box-shadow: 0px 3px 15px 6px rgba(255, 0, 0, 0.46);
+    -moz-box-shadow: 0px 3px 15px 6px rgba(255, 0, 0, 0.46);
+    box-shadow: 0px 3px 15px 6px rgba(255, 0, 0, 0.46);
+    transform: translateY(-3%);
+}
+
+.char-card__top {
+    height: 60%;
+    object-fit: cover;
+}
+
+.char-card__bottom {
+    background-color: #232222;
+    height: 40%;
+    padding: 15px 0 0 15px;
+}
+
+.char-card__name {
+    color: #fff;
+    font-size: 22px;
+}
+
