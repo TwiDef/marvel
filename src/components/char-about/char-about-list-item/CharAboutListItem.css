@@ -1,0 +1,25 @@
+.char-about-list-item {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+    font-weight: 400;
+    list-style-type: none;
+    width: 375px;
+    height: 25px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 15px;
+    transition: 0.2s all;
+    cursor: pointer;
+}
+
+.char-about-list-item:hover {
+    transform: scale(1.1);
+}
+.char-about-list-item:last-child {
+    margin-bottom: 0;
+}
+.char-about-list-item span {
+    padding-left: 10px;
+}
+
