@@ -1,6 +1,6 @@
 import React from 'react';
 import './CharAboutInfo.css';
-import Button from '../../button/Button';
+import ButtonLink from '../../buttonLink/ButtonLink';
 
 const CharAboutInfo = (props) => {
     return (
@@ -13,8 +13,8 @@ const CharAboutInfo = (props) => {
                 <div className="char-about__inter">
                     <h4>LOKI</h4>
                     <div className="char-about__btns">
-                        <Button color="#9F0013" text="HOMEPAGE" />
-                        <Button text="WIKI" />
+                        <ButtonLink color="#9F0013" text="HOMEPAGE" />
+                        <ButtonLink text="WIKI" />
                     </div>
                 </div>
             </div>

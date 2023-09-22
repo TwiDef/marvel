@@ -1,8 +1,7 @@
-button {
-    padding: 10px 0 11px;
+
+.btn-link {
     width: 101px;
     height: 38px;
-    color: #fff;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 400;
@@ -11,14 +10,20 @@ button {
     clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 85% 100%, 0% 100%);
     cursor: pointer;
     transition: 0.2s all;
+    display: flex;
+    justify-content: center;
+    align-items:center
 }
 
-button:hover {
-    
+.btn-link a {
+    color: #fff;
+}
+
+.btn-link:hover {  
     transform: translateY(-6%);
 }
 
-button:active {
+.btn-link:active {
     transform: translateY(4%);
 }
 

@@ -3,7 +3,7 @@ import Header from './components/header/Header';
 import CharCards from './components/char-cards/CharCards';
 import CharAbout from './components/char-about/CharAbout';
 import bgImg from './resources/img/bg.png'
-import Button from './components/button/Button';
+import ButtonLink from './components/buttonLink/ButtonLink';
 
 function App() {
     return (
@@ -14,7 +14,7 @@ function App() {
                 <CharCards />
                 <CharAbout />
             </section>
-            <div className='load-btn'><Button width={170} color="#9F0013" text="LOAD MORE" /></div>
+            <div className='load-btn'><ButtonLink width={170} color="#9F0013" text="LOAD MORE" /></div>
         </div>
     );
 }
