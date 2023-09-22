@@ -2,8 +2,23 @@
     max-width: 1100px;
     height: 100%;
     margin: 0 auto;
+    position: relative;
+}
+
+.bgImg {
+    position: absolute;
+    bottom: -98px;
+    right: -165px;
+    z-index: -1;
 }
 
 .main {
     display: flex;
+}
+
+.load-btn {
+    display: flex;
+    justify-content: center;
+    margin-right: 42%;
+    padding-top: 50px;
 }

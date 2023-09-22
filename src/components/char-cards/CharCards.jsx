@@ -1,6 +1,7 @@
 import React from 'react';
 import './CharCards.css';
 import CharCard from '../char-card/CharCard';
+import Button from '../button/Button';
 
 const CharCards = (props) => {
     return (
@@ -19,3 +20,4 @@ const CharCards = (props) => {
 }
 
 export default CharCards;
+
