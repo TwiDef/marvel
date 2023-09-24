@@ -2,20 +2,40 @@ import React, { Component } from 'react';
 import ButtonLink from '../../buttonLink/ButtonLink';
 import Mjolhir from './../../../resources/img/mjolnir.png';
 import Shield from './../../../resources/img/shield.png';
+import MarvelService from './../../../services/MarvelService';
 
 import './HeaderInfo.css';
 
+
 class HeaderInfo extends Component {
+    constructor(props) {
+        super(props)
+    }
+
     state = {
-        name: null,
-        description: null,
-        thumbnail: null,
-        homepage: null,
-        wiki: null
+        char: {}
+    }
+
+    componentDidMount() {
+        this.updateChar()
+    }
+
+    marvelService = new MarvelService()
+
+    onCharLoaded = (char) => {
+        this.setState({ char })
+    }
+
+    updateChar = () => {
+        const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000)
+        console.log(id)
+        this.marvelService
+            .getCharacter(id)
+            .then(this.onCharLoaded)
     }
 
     render() {
-        const { name, description, thumbnail, homepage, wiki } = this.state
+        const { char: { name, description, thumbnail, homepage, wiki } } = this.state
 
         return (
             <div className='headerInfo'>

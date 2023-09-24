@@ -13,16 +13,23 @@
     gap: 30px;
 }
 
+.headerInfo-title__name {
+    text-transform: uppercase;
+    line-height: 20px;
+}
+
 .headerInfo-text {
     font-size: 14px;
     font-weight: 500;
     line-height: 14px;
+    margin-bottom: auto;
 }
 
 .headerInfo-descr {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    justify-content: space-between;
 }
 
 .headerInfo-btns {
@@ -59,4 +66,14 @@
 .headerInfo-img {
     width: 180px;
     height: 180px;
+}
+
+.headerInfo-img img {
+    width: 180px;
+    height: 180px;
+}
+
+.headerInfo-btns {
+    display: flex;
+    gap: 30px;
 }
