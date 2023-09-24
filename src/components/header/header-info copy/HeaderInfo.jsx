@@ -4,7 +4,6 @@ import Mjolhir from './../../../resources/img/mjolnir.png';
 import Shield from './../../../resources/img/shield.png';
 import MarvelService from './../../../services/MarvelService';
 import Spinner from '../../spinner/Spinner';
-import ErrorMessage from '../../errorMessage/ErrorMessage';
 
 import './HeaderInfo.css';
 
@@ -15,8 +14,7 @@ class HeaderInfo extends Component {
 
     state = {
         char: {},
-        loading: true,
-        error: false
+        loading: true
     }
 
     componentDidMount() {
@@ -32,35 +30,19 @@ class HeaderInfo extends Component {
         })
     }
 
-    onError = () => {
-        this.setState({
-            loading: false,
-            error: true
-        })
-    }
-
     updateChar = () => {
         const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000)
         this.marvelService
             .getCharacter(id)
             .then(this.onCharLoaded)
-            .catch(this.onError)
     }
 
     render() {
-        const { char, loading, error } = this.state
-        const errorMessage = error ? <ErrorMessage /> : null
-        const spinner = loading ? <Spinner /> : null
-        const content = !(loading || error) ? <View char={char} /> : null
+        const { char, loading } = this.state
 
         return (
             <div className='headerInfo'>
-                <div className="headerInfo-left">
-                    {errorMessage}
-                    {spinner}
-                    {content}
-                    {/* {loading ? <Spinner /> : <View char={char} />} */}
-                </div>
+                {loading ? <Spinner /> : <View char={char} />}
                 <div className="headerInfo-right">
                     <h4 className='headerInfo-title'>
                         Random character for today! <br />
@@ -83,7 +65,7 @@ class HeaderInfo extends Component {
 const View = ({ char }) => {
     const { name, description, thumbnail, homepage, wiki } = char
     return (
-        <div className='headerInfo-left__inner'>
+        <div className="headerInfo-left">
             <div className='headerInfo-img'>
                 <img src={thumbnail} alt="img" />
             </div>

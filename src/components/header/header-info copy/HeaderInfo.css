@@ -1,6 +1,5 @@
 .headerInfo {
     margin-top: 50px;
-    height: 250px;
     display: flex;
     justify-content: space-between;
     box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.25);
@@ -9,12 +8,6 @@
 
 .headerInfo-left {
     width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.headerInfo-left__inner {
     display: flex;
     padding: 35px;
     gap: 30px;
@@ -50,13 +43,12 @@
 
 .headerInfo-right{
     background: #232222;
-    max-width: 550px;
     width: 50%;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 35px;
+    gap: 27px;
+    padding: 40px;
 }
 
 .header-bgimg__first {
