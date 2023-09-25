@@ -5,3 +5,10 @@
     grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
 }
+
+.char-cards-spinner {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

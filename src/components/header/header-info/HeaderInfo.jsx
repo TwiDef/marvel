@@ -21,6 +21,15 @@ class HeaderInfo extends Component {
 
     componentDidMount() {
         this.updateChar()
+        /* this.timerId = setInterval(this.updateChar, 3000) */
+    }
+
+    componentDidUpdate() {
+        console.log('DidUpdate')
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerId)
     }
 
     marvelService = new MarvelService()
@@ -29,6 +38,12 @@ class HeaderInfo extends Component {
         this.setState({
             char,
             loading: false
+        })
+    }
+
+    onCharLoading = () => {
+        this.setState({
+            loading: true
         })
     }
 
@@ -41,6 +56,7 @@ class HeaderInfo extends Component {
 
     updateChar = () => {
         const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000)
+        this.onCharLoading()
         this.marvelService
             .getCharacter(id)
             .then(this.onCharLoaded)
@@ -69,7 +85,10 @@ class HeaderInfo extends Component {
                     <h4 className='headerInfo-title'>
                         Or choose another one
                     </h4>
-                    <ButtonLink color="#9F0013" text="TRY IT" />
+                    <div style={{ width: "101px" }} onClick={this.updateChar}>
+                        <ButtonLink color="#9F0013" text="TRY IT" />
+                    </div>
+
 
                 </div>
 

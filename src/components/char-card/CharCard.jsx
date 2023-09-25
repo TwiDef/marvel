@@ -1,14 +1,14 @@
 import React from 'react';
 import './CharCard.css';
 
-const CharCard = ({ img }) => {
+const CharCard = ({ img, name }) => {
     return (
-        <div className='char-card'>
+        <li className='char-card'>
             <img className='char-card__top' src={img} />
             <div className='char-card__bottom'>
-                <span className='char-card__name'>ABYSS</span>
+                <span className='char-card__name'>{name}</span>
             </div>
-        </div>
+        </li>
     );
 }
 

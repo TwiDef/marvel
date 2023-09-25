@@ -23,7 +23,7 @@
 .char-card__bottom {
     background-color: #232222;
     height: 40%;
-    padding: 15px 0 0 15px;
+    padding: 15px 15px 0 15px;
 }
 
 .char-card__name {

@@ -18,7 +18,7 @@
 .headerInfo-left__inner {
     display: flex;
     padding: 35px;
-    gap: 30px;
+    gap: 48px;
 }
 
 .headerInfo-title__name {
@@ -80,6 +80,7 @@
 .headerInfo-img img {
     width: 180px;
     height: 180px;
+    /* object-fit: fill; */
 }
 
 .headerInfo-btns {
