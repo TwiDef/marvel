@@ -1,9 +1,9 @@
 import React from 'react';
 import './CharCard.css';
 
-const CharCard = ({ img, name }) => {
+const CharCard = ({ img, name, id, onCharSelected }) => {
     return (
-        <li className='char-card'>
+        <li className='char-card' onClick={() => onCharSelected(id)}>
             <img className='char-card__top' src={img} />
             <div className='char-card__bottom'>
                 <span className='char-card__name'>{name}</span>

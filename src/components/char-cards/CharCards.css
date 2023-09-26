@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
+    position: relative;
 }
 
 .char-cards-spinner {
@@ -11,4 +12,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.load-btn {
+    position: absolute;
+    bottom: -3%;
+    left: 21.5%;
 }

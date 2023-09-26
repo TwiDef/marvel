@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './CharCards.css';
 import CharCard from '../char-card/CharCard';
-import Button from '../button/Button';
 import MarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
+import ButtonLink from '../buttonLink/ButtonLink';
 
 class CharCards extends Component {
     constructor(props) {
@@ -17,14 +17,14 @@ class CharCards extends Component {
         error: false
     }
 
+    marvelService = new MarvelService()
+
     componentDidMount = () => {
         this.marvelService
             .getAllCharacters()
             .then(this.onCharsLoaded)
             .catch(this.onError)
     }
-
-    marvelService = new MarvelService()
 
     onCharsLoaded = (chars) => {
         this.setState({
@@ -48,13 +48,20 @@ class CharCards extends Component {
         if (loading) return <div className='char-cards-spinner'>{spinner}</div>
         if (error) return errorMessage
         return (
-            <ul className='char-cards'>
-                {chars.map((char, i) =>
-                    <CharCard
-                        key={i}
-                        img={char.thumbnail}
-                        name={char.name} />)}
-            </ul>
+            <>
+                <ul className='char-cards'>
+                    {chars.map((char) =>
+                        <CharCard
+                            key={char.id}
+                            id={char.id}
+                            onCharSelected={this.props.onCharSelected}
+                            img={char.thumbnail}
+                            name={char.name} />)}
+                </ul>
+                <div className='load-btn'>
+                    <ButtonLink width={170} color="#9F0013" text="LOAD MORE" />
+                </div>
+            </>
         );
     }
 
