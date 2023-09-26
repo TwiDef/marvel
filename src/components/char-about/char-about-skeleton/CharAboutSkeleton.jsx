@@ -13,13 +13,13 @@ class CharAboutSkeleton extends Component {
                 <div className='skeleton'>
                     <h4 className='sceleton-title'>Please select a character to see information</h4>
                     <div className="skeleton-items">
-                        <div className="skeleton-item-round"></div>
-                        <div className="skeleton-item-rectangle__small"></div>
+                        <div className="skeleton-item-round blink"></div>
+                        <div className="skeleton-item-rectangle__small blink"></div>
                     </div>
                     <div className='skeleton-rectangles'>
-                        <div className="skeleton-rectangle"></div>
-                        <div className="skeleton-rectangle"></div>
-                        <div className="skeleton-rectangle"></div>
+                        <div className="skeleton-rectangle blink"></div>
+                        <div className="skeleton-rectangle blink"></div>
+                        <div className="skeleton-rectangle blink"></div>
                     </div>
 
                 </div>

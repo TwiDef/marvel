@@ -25,8 +25,7 @@ class App extends Component {
                 <Header />
                 <section className='main'>
                     <CharCards onCharSelected={this.onCharSelected} />
-                    {/* <CharAbout charId={this.state.selectedChar} /> */}
-                    <CharAboutSkeleton />
+                    <CharAbout charId={this.state.selectedChar} />
                 </section>
             </div>
         );
