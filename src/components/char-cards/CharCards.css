@@ -1,10 +1,10 @@
 .char-cards {
-    margin-top: 60px;
     width: 60%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 30px;
     position: relative;
+    margin-top: 60px;
 }
 
 .char-cards-spinner {

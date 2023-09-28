@@ -24,10 +24,6 @@ class HeaderInfo extends Component {
         /* this.timerId = setInterval(this.updateChar, 3000) */
     }
 
-    componentDidUpdate() {
-        console.log('DidUpdate')
-    }
-
     componentWillUnmount() {
         clearInterval(this.timerId)
     }

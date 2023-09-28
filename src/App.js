@@ -4,7 +4,7 @@ import Header from './components/header/Header';
 import CharCards from './components/char-cards/CharCards';
 import CharAbout from './components/char-about/CharAbout';
 import bgImg from './resources/img/bg.png'
-import CharAboutSkeleton from './components/char-about/char-about-skeleton/CharAboutSkeleton';
+import ErrorBoundary from './components/errorBoundary/ErrorBoundary';
 
 class App extends Component {
 
@@ -25,7 +25,9 @@ class App extends Component {
                 <Header />
                 <section className='main'>
                     <CharCards onCharSelected={this.onCharSelected} />
-                    <CharAbout charId={this.state.selectedChar} />
+                    <ErrorBoundary>
+                        <CharAbout charId={this.state.selectedChar} />
+                    </ErrorBoundary>
                 </section>
             </div>
         );
