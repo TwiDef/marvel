@@ -21,6 +21,12 @@ class CharAbout extends Component {
         this.updateChar()
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.charId !== prevProps.charId) {
+            this.updateChar()
+        }
+    }
+
     updateChar = () => {
         const { charId } = this.props
         if (!charId) {
@@ -61,8 +67,15 @@ class CharAbout extends Component {
         const spinner = loading ? <Spinner /> : null
         const content = !(loading || error || !char)
             ? <div className='char-about'>
-                <CharAboutInfo />
-                <CharAboutList />
+                <CharAboutInfo
+                    name={char.name}
+                    description={char.description}
+                    thumbnail={char.thumbnail}
+                    homepage={char.homepage}
+                    wiki={char.wiki}
+                />
+                <CharAboutList
+                    comics={char.comics} />
             </div>
             : null
 

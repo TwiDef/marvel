@@ -1,3 +1,6 @@
 .char-about-list h4 {
     margin-top: 10px;
 }
+.char-about-list-noinfo {
+    list-style-type: none;
+}

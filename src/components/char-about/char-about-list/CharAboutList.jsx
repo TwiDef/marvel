@@ -2,21 +2,16 @@ import React from 'react';
 import CharAboutListItem from '../char-about-list-item/CharAboutListItem';
 import './CharAboutList.css';
 
-const CharAboutList = (props) => {
+const CharAboutList = ({ comics }) => {
     return (
         <div className='char-about-list'>
             <h4>Comics:</h4>
             <ul>
-                <CharAboutListItem />
-                <CharAboutListItem />
-                <CharAboutListItem />
-                <CharAboutListItem />
-                <CharAboutListItem />
-                <CharAboutListItem />
-                <CharAboutListItem />
-                <CharAboutListItem />
-                <CharAboutListItem />
-                <CharAboutListItem />
+                {
+                    comics.length ?
+                        comics.map((item, i) => <CharAboutListItem key={i} name={item.name} />) :
+                        <li className='char-about-list-noinfo'>There is no comics with this character</li>
+                }
             </ul>
         </div>
     );

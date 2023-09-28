@@ -8,6 +8,9 @@
     width: 150px;
     height: 150px;
 }
+.char-about__img img {
+    object-fit:fill;
+}
 
 
 .char-about__notion {
@@ -24,7 +27,7 @@
 .char-about__btns {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
 .char-about__descr {

@@ -1,10 +1,10 @@
 import React from 'react';
 import './CharAboutListItem.css';
 
-const CharAboutListItem = (props) => {
+const CharAboutListItem = ({ name }) => {
     return (
         <li className='char-about-list-item'>
-            <span>All-Winners Squad: Band of Heroes (2011) #3</span>
+            <span>{name}</span>
         </li>
     );
 }

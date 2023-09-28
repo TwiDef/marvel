@@ -2,24 +2,24 @@ import React from 'react';
 import './CharAboutInfo.css';
 import ButtonLink from '../../buttonLink/ButtonLink';
 
-const CharAboutInfo = (props) => {
+const CharAboutInfo = ({ name, description, thumbnail, homepage, wiki }) => {
     return (
         <div className='char-about-info'>
 
             <div className='char-about__notion'>
                 <div className='char-about__img'>
-                    <img src="https://wwwflickeringmythc3c8f7.zapwp.com/q:intelligent/r:0/wp:1/w:1/u:https://cdn.flickeringmyth.com/wp-content/uploads/2023/07/dfaa44051c35f35560b9884b2cc1f2931ed6-1.jpg" alt="" />
+                    <img src={thumbnail} alt={name} />
                 </div>
                 <div className="char-about__inter">
-                    <h4>LOKI</h4>
+                    <h4>{name}</h4>
                     <div className="char-about__btns">
-                        <ButtonLink color="#9F0013" text="HOMEPAGE" />
-                        <ButtonLink text="WIKI" />
+                        <ButtonLink href={homepage} color="#9F0013" text="HOMEPAGE" />
+                        <ButtonLink href={wiki} text="WIKI" />
                     </div>
                 </div>
             </div>
             <p className="char-about__descr">
-                In Norse mythology, Loki is a god or jötunn (or both). Loki is the son of Fárbauti and Laufey, and the brother of Helblindi and Býleistr. By the jötunn Angrboða, Loki is the father of Hel, the wolf Fenrir, and the world serpent Jörmungandr. By Sigyn, Loki is the father of Nari and/or Narfi and with the stallion Svaðilfari as the father, Loki gave birth—in the form of a mare—to the eight-legged horse Sleipnir. In addition, Loki is referred to as the father of Váli in the Prose Edda.
+                {description}
             </p>
         </div>
     );
