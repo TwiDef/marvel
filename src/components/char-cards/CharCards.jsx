@@ -4,7 +4,7 @@ import CharCard from '../char-card/CharCard';
 import MarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
-import ButtonLink from '../buttonLink/ButtonLink';
+import Button from '../button/Button';
 
 class CharCards extends Component {
     constructor(props) {
@@ -14,23 +14,40 @@ class CharCards extends Component {
     state = {
         chars: [],
         loading: true,
-        error: false
+        error: false,
+        newItemLoading: false,
+        offset: 210
     }
 
     marvelService = new MarvelService()
 
-    componentDidMount = () => {
+    componentDidMount() {
+        this.onRequest()
+    }
+
+    onRequest = (offset) => {
+        this.onCharListLoading()
         this.marvelService
-            .getAllCharacters()
-            .then(this.onCharsLoaded)
+            .getAllCharacters(offset)
+            .then(this.onCharListLoaded)
             .catch(this.onError)
     }
 
-    onCharsLoaded = (chars) => {
+    onCharListLoading = () => {
         this.setState({
-            chars,
-            loading: false
+            newItemLoading: true
         })
+    }
+
+    onCharListLoaded = (newChars) => {
+        this.setState(({ offset, chars }) => (
+            {
+                chars: [...chars, ...newChars],
+                loading: false,
+                newItemLoading: false,
+                offset: offset + 9
+            }
+        ))
     }
 
     onError = () => {
@@ -41,7 +58,7 @@ class CharCards extends Component {
     }
 
     render() {
-        const { chars, loading, error } = this.state
+        const { chars, loading, error, offset, newItemLoading } = this.state
         const errorMessage = error ? <ErrorMessage /> : null
         const spinner = loading ? <Spinner /> : null
 
@@ -58,8 +75,15 @@ class CharCards extends Component {
                             img={char.thumbnail}
                             name={char.name} />)}
                 </ul>
-                <div className='load-btn'>
-                    <ButtonLink width={170} color="#9F0013" text="LOAD MORE" />
+                <div
+                    className='load-btn'
+                >
+                    <Button
+                        width={170}
+                        color="#9F0013"
+                        text="LOAD MORE"
+                        onClick={() => this.onRequest(offset)}
+                    />
                 </div>
             </>
         );
