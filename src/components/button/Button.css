@@ -22,3 +22,7 @@ button:active {
     transform: translateY(4%);
 }
 
+button:disabled {
+    filter:grayscale(.5)
+}
+
