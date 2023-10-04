@@ -7,7 +7,6 @@ import bgImg from './resources/img/bg.png'
 import ErrorBoundary from './components/errorBoundary/ErrorBoundary';
 
 class App extends Component {
-
     state = {
         selectedChar: null
     }

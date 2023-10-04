@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import CharAboutInfo from './char-about-info/CharAboutInfo';
 import CharAboutList from './char-about-list/CharAboutList';
 import MarvelService from '../../services/MarvelService';
@@ -91,5 +93,8 @@ class CharAbout extends Component {
     }
 }
 
+CharAbout.propTypes = {
+    charId: PropTypes.number
+}
 
 export default CharAbout;

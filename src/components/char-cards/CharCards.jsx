@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import './CharCards.css';
+import PropTypes from 'prop-types';
+
 import CharCard from '../char-card/CharCard';
 import MarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Button from '../button/Button';
+import './CharCards.css';
 
 class CharCards extends Component {
     constructor(props) {
@@ -64,6 +66,17 @@ class CharCards extends Component {
         })
     }
 
+    refItems = []
+
+    onFocus = (ref) => {
+        this.refItems.push(ref.current)
+        this.refItems.forEach(item => {
+            item.classList.remove('char-card--focus')
+        })
+        ref.current.classList.add('char-card--focus')
+        ref.current.focus()
+    }
+
     render() {
         const { chars, loading, error, offset, newItemLoading, charEnded } = this.state
         const errorMessage = error ? <ErrorMessage /> : null
@@ -78,6 +91,7 @@ class CharCards extends Component {
                         <CharCard
                             key={char.id}
                             id={char.id}
+                            onFocus={this.onFocus}
                             onCharSelected={this.props.onCharSelected}
                             img={char.thumbnail}
                             name={char.name} />)}
@@ -97,8 +111,12 @@ class CharCards extends Component {
             </>
         );
     }
-
 }
+
+CharCards.propTypes = {
+    onCharSelected: PropTypes.func.isRequired
+}
+
 
 export default CharCards;
 
