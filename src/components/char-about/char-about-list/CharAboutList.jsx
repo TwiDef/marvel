@@ -9,7 +9,10 @@ const CharAboutList = ({ comics }) => {
             <ul>
                 {
                     comics.length ?
-                        comics.map((item, i) => <CharAboutListItem key={i} name={item.name} />) :
+                        comics.map((item, i) => {
+                            if (i > 9) return
+                            return <CharAboutListItem key={i} name={item.name} />
+                        }) :
                         <li className='char-about-list-noinfo'>There is no comics with this character</li>
                 }
             </ul>
