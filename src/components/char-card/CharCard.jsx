@@ -1,29 +1,27 @@
-import React, { Component } from 'react';
+import React, { useRef } from 'react';
 import './CharCard.css';
 
-class CharCard extends Component {
-    constructor(props) {
-        super(props);
-        this.charRef = React.createRef()
-    }
+const CharCard = (props) => {
 
-    render() {
-        return (
-            <li
-                className='char-card'
-                ref={this.charRef}
-                onClick={() => {
-                    this.props.onFocus(this.charRef)
-                    this.props.onCharSelected(this.props.id)
-                }}
-            >
-                <img className='char-card__top' src={this.props.img} />
-                <div className='char-card__bottom'>
-                    <span className='char-card__name'>{this.props.name}</span>
-                </div>
-            </li>
-        );
-    }
+    const charRef = useRef()
+
+    return (
+        <li
+            className='char-card'
+            tabIndex={0}
+            ref={charRef}
+            onClick={() => {
+                props.onFocus(charRef)
+                props.onCharSelected(props.id)
+            }}
+        >
+            <img className='char-card__top' src={props.img} />
+            <div className='char-card__bottom'>
+                <span className='char-card__name'>{props.name}</span>
+            </div>
+        </li>
+    );
+
 }
 
 export default CharCard;
