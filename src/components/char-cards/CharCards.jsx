@@ -72,7 +72,6 @@ const CharCards = (props) => {
     return (
         <>
             <ul className='char-cards'>
-
                 {chars.map((char) =>
                     <CharCard
                         key={char.id}
@@ -98,11 +97,9 @@ const CharCards = (props) => {
     );
 }
 
-
 CharCards.propTypes = {
     onCharSelected: PropTypes.func.isRequired
 }
-
 
 export default CharCards;
 

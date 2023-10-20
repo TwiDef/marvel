@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import ButtonLink from '../../buttonLink/ButtonLink';
 import Mjolhir from './../../../resources/img/mjolnir.png';
@@ -9,91 +9,75 @@ import ErrorMessage from '../../errorMessage/ErrorMessage';
 
 import './HeaderInfo.css';
 
-class HeaderInfo extends Component {
-    constructor(props) {
-        super(props)
-    }
+const HeaderInfo = () => {
 
-    state = {
-        char: {},
-        loading: true,
-        error: false
-    }
+    const [char, setChar] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(false)
 
-    componentDidMount() {
-        this.updateChar()
-        /* this.timerId = setInterval(this.updateChar, 3000) */
-    }
+    const marvelService = new MarvelService()
 
-    componentWillUnmount() {
-        clearInterval(this.timerId)
-    }
+    useEffect(() => {
+        updateChar()
+        const timerId = setInterval(updateChar, 60000)
+        return () => {
+            clearInterval(timerId)
+        }
+    }, [])
 
-    marvelService = new MarvelService()
-
-    onCharLoaded = (char) => {
-        this.setState({
-            char,
-            loading: false
-        })
-    }
-
-    onCharLoading = () => {
-        this.setState({
-            loading: true
-        })
-    }
-
-    onError = () => {
-        this.setState({
-            loading: false,
-            error: true
-        })
-    }
-
-    updateChar = () => {
+    const updateChar = () => {
         const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000)
-        this.onCharLoading()
-        this.marvelService
+        onCharLoading()
+        marvelService
             .getCharacter(id)
-            .then(this.onCharLoaded)
-            .catch(this.onError)
+            .then(onCharLoaded)
+            .catch(onError)
     }
 
-    render() {
-        const { char, loading, error } = this.state
-        const errorMessage = error ? <ErrorMessage /> : null
-        const spinner = loading ? <Spinner /> : null
-        const content = !(loading || error) ? <View char={char} /> : null
+    const onCharLoaded = (char) => {
+        setLoading(false)
+        setChar(char)
+    }
 
-        return (
-            <div className='headerInfo'>
-                <div className="headerInfo-left">
-                    {errorMessage}
-                    {spinner}
-                    {content}
-                    {/* {loading ? <Spinner /> : <View char={char} />} */}
-                </div>
-                <div className="headerInfo-right">
-                    <h4 className='headerInfo-title'>
-                        Random character for today! <br />
-                        Do you want to get to know him better?
-                    </h4>
-                    <h4 className='headerInfo-title'>
-                        Or choose another one
-                    </h4>
-                    <div style={{ width: "101px" }} onClick={this.updateChar}>
-                        <ButtonLink color="#9F0013" text="TRY IT" />
-                    </div>
+    const onCharLoading = () => {
+        setLoading(true)
+    }
 
+    const onError = () => {
+        setLoading(false)
+        setError(true)
+    }
 
-                </div>
+    const errorMessage = error ? <ErrorMessage /> : null
+    const spinner = loading ? <Spinner /> : null
+    const content = !(loading || error) ? <View char={char} /> : null
 
-                <img className='header-bgimg__first' src={Mjolhir} alt="" />
-                <img className='header-bgimg__second' src={Shield} alt="" />
+    return (
+        <div className='headerInfo'>
+            <div className="headerInfo-left">
+                {errorMessage}
+                {spinner}
+                {content}
+                {/* {loading ? <Spinner /> : <View char={char} />} */}
             </div>
-        );
-    }
+            <div className="headerInfo-right">
+                <h4 className='headerInfo-title'>
+                    Random character for today! <br />
+                    Do you want to get to know him better?
+                </h4>
+                <h4 className='headerInfo-title'>
+                    Or choose another one
+                </h4>
+                <div style={{ width: "101px" }} onClick={updateChar}>
+                    <ButtonLink color="#9F0013" text="TRY IT" />
+                </div>
+            </div>
+
+            <img className='header-bgimg__first' src={Mjolhir} alt="" />
+            <img className='header-bgimg__second' src={Shield} alt="" />
+        </div>
+    );
+
 }
 
 const View = ({ char }) => {
