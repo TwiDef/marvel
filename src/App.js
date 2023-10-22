@@ -18,12 +18,12 @@ const App = () => {
         <div className="App">
             <img className='bgImg' src={bgImg} alt="" />
             <Header />
-            <section className='main'>
+            {/* <section className='main'>
                 <CharCards onCharSelected={onCharSelected} />
                 <ErrorBoundary>
                     <CharAbout charId={selectedChar} />
                 </ErrorBoundary>
-            </section>
+            </section> */}
         </div>
     );
 }

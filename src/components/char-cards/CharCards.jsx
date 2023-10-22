@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import CharCard from '../char-card/CharCard';
-import MarvelService from '../../services/MarvelService';
+import useMarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Button from '../button/Button';
@@ -17,7 +17,7 @@ const CharCards = (props) => {
     let [offset, setOffset] = useState(210)
     let [charEnded, setCharEnded] = useState(false)
 
-    const marvelService = new MarvelService()
+    const marvelService = useMarvelService()
 
     useEffect(() => {
         onRequest()

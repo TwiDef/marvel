@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import ButtonLink from '../../buttonLink/ButtonLink';
 import Mjolhir from './../../../resources/img/mjolnir.png';
 import Shield from './../../../resources/img/shield.png';
-import MarvelService from './../../../services/MarvelService';
+import useMarvelService from './../../../services/MarvelService';
 import Spinner from '../../spinner/Spinner';
 import ErrorMessage from '../../errorMessage/ErrorMessage';
 
@@ -11,11 +11,8 @@ import './HeaderInfo.css';
 
 const HeaderInfo = () => {
 
-    const [char, setChar] = useState(null)
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(false)
-
-    const marvelService = new MarvelService()
+    const [char, setChar] = useState({})
+    const { loading, error, getCharacter } = useMarvelService()
 
     useEffect(() => {
         updateChar()
@@ -27,25 +24,12 @@ const HeaderInfo = () => {
 
     const updateChar = () => {
         const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000)
-        onCharLoading()
-        marvelService
-            .getCharacter(id)
+        getCharacter(id)
             .then(onCharLoaded)
-            .catch(onError)
     }
 
     const onCharLoaded = (char) => {
-        setLoading(false)
         setChar(char)
-    }
-
-    const onCharLoading = () => {
-        setLoading(true)
-    }
-
-    const onError = () => {
-        setLoading(false)
-        setError(true)
     }
 
     const errorMessage = error ? <ErrorMessage /> : null
