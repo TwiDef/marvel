@@ -48,7 +48,6 @@ const CharAbout = (props) => {
         setError(true)
     }
 
-
     const skeleton = char || loading || error ? null : <CharAboutSkeleton />
     const errorMessage = error ? <ErrorMessage /> : null
     const spinner = loading ? <Spinner /> : null
@@ -76,7 +75,6 @@ const CharAbout = (props) => {
         </div>
     );
 }
-
 
 CharAbout.propTypes = {
     charId: PropTypes.number
