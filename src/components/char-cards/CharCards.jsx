@@ -11,28 +11,20 @@ import './CharCards.css';
 const CharCards = (props) => {
 
     const [chars, setChars] = useState([])
-    let [loading, setLoading] = useState(true)
-    let [error, setError] = useState(false)
     let [newItemLoading, setNewItemLoading] = useState(false)
     let [offset, setOffset] = useState(210)
     let [charEnded, setCharEnded] = useState(false)
 
-    const marvelService = useMarvelService()
+    const { loading, error, getAllCharacters } = useMarvelService()
 
     useEffect(() => {
-        onRequest()
+        onRequest(offset)
     }, [])
 
     const onRequest = (offset) => {
-        onCharListLoading()
-        marvelService
-            .getAllCharacters(offset)
-            .then(onCharListLoaded)
-            .catch(onError)
-    }
-
-    const onCharListLoading = () => {
         setNewItemLoading(true)
+        getAllCharacters(offset)
+            .then(onCharListLoaded)
     }
 
     const onCharListLoaded = (newChars) => {
@@ -42,15 +34,9 @@ const CharCards = (props) => {
         }
 
         setChars(chars => [...chars, ...newChars])
-        setLoading(loading => false)
         setNewItemLoading(newItemLoading => false)
         setOffset(offset => offset + 9)
         setCharEnded(charEnded => ended)
-    }
-
-    const onError = () => {
-        setLoading(loading => false)
-        setError(true)
     }
 
     const refItems = useRef([])
@@ -102,4 +88,5 @@ CharCards.propTypes = {
 }
 
 export default CharCards;
+
 

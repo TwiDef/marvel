@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.css';
-import HeaderInfo from './header-info/HeaderInfo';
 
 const Header = (props) => {
     return (
@@ -12,8 +11,6 @@ const Header = (props) => {
                     <a href='#' className='header-text__red'>Characters</a> / <a href='#'>Comics</a>
                 </div>
             </div>
-
-            <HeaderInfo />
         </div>
     );
 }
