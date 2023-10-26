@@ -1,0 +1,27 @@
+
+.comics-list {
+    margin: 0;
+    margin-top: 50px;
+    width: 225px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 67px;
+    row-gap: 55px;
+}
+.comics-item {
+    list-style-type: none;
+
+}
+.comics-item__cover {
+    width: 225px;
+    height: 346px;
+}
+.comics-item__title {
+    font-size: 14px;
+    font-weight: 700;
+}
+.comics-item__price {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.60);
+}

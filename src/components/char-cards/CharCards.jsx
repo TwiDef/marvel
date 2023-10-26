@@ -6,6 +6,7 @@ import useMarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Button from '../button/Button';
+import bgImg from '../../resources/img/bg.png'
 import './CharCards.css';
 
 const CharCards = (props) => {
@@ -67,6 +68,7 @@ const CharCards = (props) => {
                         img={char.thumbnail}
                         name={char.name} />)}
             </ul>
+            <img className='bgImg' src={bgImg} alt="" />
             <div
                 className='load-btn'
                 style={{ display: charEnded ? 'none' : 'block' }}
