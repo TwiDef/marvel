@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import useMarvelService from '../../services/MarvelService';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Spinner from '../spinner/Spinner';
+import Button from '../button/Button';
 import './Comics.css';
 
 const Comics = (props) => {
@@ -54,9 +55,6 @@ const Comics = (props) => {
     const errorMessage = error ? <ErrorMessage /> : null
     const spinner = loading ? <Spinner /> : null
 
-    if (loading) return <div className='comics-spinner'>{spinner}</div>
-    if (error) return <ErrorMessage />
-
     return (
         <>
             {errorMessage}
@@ -64,6 +62,15 @@ const Comics = (props) => {
             <ul className="comics-list">
                 {items}
             </ul>
+            <div className='comics-loadmore'>
+                <Button
+                    width={170}
+                    color="#9F0013"
+                    text="LOAD MORE"
+                    disabled={newItemLoading}
+                    onClick={() => onRequest(offset)}
+                />
+            </div>
         </>
     );
 }

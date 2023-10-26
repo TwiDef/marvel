@@ -8,10 +8,15 @@
 }
 
 .char-cards-spinner {
-    width: 60%;
+    /* width: 60%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 1;
 }
 
 .load-btn {

@@ -28,7 +28,7 @@ const useMarvelService = () => {
             title: comic.title,
             id: comic.id,
             cover: `${comic.thumbnail.path}.${comic.thumbnail.extension}`,
-            price: comic.prices[0].price,
+            price: comic.prices[0].price ? `${comic.prices[0].price}$` : 'not available',
             description: comic.description || 'There is no description',
             pageCount: comic.pageCount ? `${comic.pageCount} p.` : 'No information about page count',
             language: comic.textObjects[0] ? comic.textObjects[0].language : 'en-us'

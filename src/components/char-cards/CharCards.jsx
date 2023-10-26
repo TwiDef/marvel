@@ -54,10 +54,12 @@ const CharCards = (props) => {
     const errorMessage = error ? <ErrorMessage /> : null
     const spinner = loading ? <Spinner /> : null
 
-    if (loading) return <div className='char-cards-spinner'>{spinner}</div>
-    if (error) return errorMessage
+    /* if (loading) return <div className='char-cards-spinner'>{spinner}</div>
+    if (error) return errorMessage */
     return (
         <>
+            {errorMessage}
+            {(loading) ? <div className='char-cards-spinner'>{spinner}</div> : null}
             <ul className='char-cards'>
                 {chars.map((char) =>
                     <CharCard

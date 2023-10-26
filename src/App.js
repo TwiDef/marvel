@@ -19,16 +19,16 @@ const App = () => {
     return (
         <div className="App">
             <Header />
-            {/* <HeaderInfo />
+            <HeaderInfo />
             <section className='main'>
                 <CharCards onCharSelected={onCharSelected} />
                 <ErrorBoundary>
                     <CharAbout charId={selectedChar} />
                 </ErrorBoundary>
-            </section> */}
+            </section>
 
-            <Banner />
-            <Comics />
+            {/*  <Banner />
+            <Comics /> */}
 
         </div>
     );
