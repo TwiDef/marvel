@@ -56,6 +56,7 @@ const CharCards = (props) => {
 
     /* if (loading) return <div className='char-cards-spinner'>{spinner}</div>
     if (error) return errorMessage */
+
     return (
         <>
             {errorMessage}
