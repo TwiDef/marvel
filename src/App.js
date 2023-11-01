@@ -4,6 +4,7 @@ import Header from './components/header/Header';
 import MainPage from './components/pages/MainPage';
 import ComicsPage from './components/pages/ComicsPage';
 import './App.css';
+import Page404 from './components/pages/404';
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<MainPage />} />
                     <Route path="/comics" element={<ComicsPage />} />
+                    <Route path="*" element={<Page404 />} />
                 </Routes>
             </div>
         </Router>
