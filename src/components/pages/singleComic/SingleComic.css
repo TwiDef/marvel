@@ -1,0 +1,47 @@
+.comic {
+    display: flex;
+    gap: 50px;
+}
+
+.comic-cover {
+    width: 293px;
+    height: 450px;
+    object-fit: cover;
+}
+
+.comic-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 550px;
+    width: 100%;
+}
+
+.comic-title {
+    font-size: 22px;
+    font-weight: 700;
+} 
+
+.comic-description {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.comic-quantity {
+    font-weight: 500;
+}
+
+.comic-language {
+    font-weight: 500;
+}
+
+.comic-price {
+    color: #9F0013;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.comic-backward-btn {
+    font-size: 18px;
+    font-weight: 700;
+}

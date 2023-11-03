@@ -5,6 +5,7 @@ import MainPage from './components/pages/MainPage';
 import ComicsPage from './components/pages/ComicsPage';
 import './App.css';
 import Page404 from './components/pages/404';
+import SingleComic from './components/pages/singleComic/SingleComic';
 
 const App = () => {
 
@@ -16,10 +17,11 @@ const App = () => {
                     <Route path="/" element={<MainPage />} />
                     <Route path="/comics" element={<ComicsPage />} />
                     <Route path="*" element={<Page404 />} />
+                    <Route path="/comic" element={<SingleComic />} />
                 </Routes>
             </div>
         </Router>
     );
 }
 
-export default App;
+export default App; 
