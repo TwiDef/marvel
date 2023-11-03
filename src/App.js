@@ -5,7 +5,7 @@ import MainPage from './components/pages/MainPage';
 import ComicsPage from './components/pages/ComicsPage';
 import './App.css';
 import Page404 from './components/pages/404';
-import SingleComic from './components/pages/singleComic/SingleComic';
+import SingleComicPage from './components/pages/singleComicPage/SingleComicPage';
 
 const App = () => {
 
@@ -16,8 +16,8 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<MainPage />} />
                     <Route path="/comics" element={<ComicsPage />} />
+                    <Route path="/comics/:comicId" element={<SingleComicPage />} />
                     <Route path="*" element={<Page404 />} />
-                    <Route path="/comic" element={<SingleComic />} />
                 </Routes>
             </div>
         </Router>

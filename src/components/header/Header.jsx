@@ -20,7 +20,6 @@ const Header = (props) => {
                     </NavLink>
                     <span> / </span>
                     <NavLink
-                        end
                         style={({ isActive }) => ({ color: isActive ? '#9F0013' : null })}
                         to='/comics'>
                         Comics

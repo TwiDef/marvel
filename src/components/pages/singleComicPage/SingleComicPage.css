@@ -17,7 +17,7 @@
     width: 100%;
 }
 
-.comic-title {
+.comic-name {
     font-size: 22px;
     font-weight: 700;
 } 
@@ -44,4 +44,5 @@
 .comic-backward-btn {
     font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
 }
