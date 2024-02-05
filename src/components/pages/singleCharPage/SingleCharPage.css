@@ -1,0 +1,16 @@
+.single-char-wrapper {
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+
+.single-char-img img {
+    width: 295px;
+    height: 295px;
+}
+
+.single-char-about h6 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}

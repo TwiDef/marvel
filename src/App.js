@@ -7,6 +7,7 @@ import './App.css';
 const Page404 = lazy(() => import('./components/pages/404'))
 const MainPage = lazy(() => import('./components/pages/MainPage'))
 const ComicsPage = lazy(() => import('./components/pages/ComicsPage'))
+const SingleCharPage = lazy(() => import('./components/pages/singleCharPage/SingleCharPage'))
 const SingleComicPage = lazy(() => import('./components/pages/singleComicPage/SingleComicPage'))
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
                         <Route path="/" element={<MainPage />} />
                         <Route path="/comics" element={<ComicsPage />} />
                         <Route path="/comics/:comicId" element={<SingleComicPage />} />
+                        <Route path="/:Id" element={<SingleCharPage />} />
                         <Route path="*" element={<Page404 />} />
                     </Routes>
                 </Suspense>

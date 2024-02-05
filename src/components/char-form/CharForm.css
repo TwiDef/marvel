@@ -19,9 +19,28 @@
     position: absolute;
     top: 45px;
     left: 10px;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
     color: red;
+}
+.char-form-link  a {
+    display: inline-block;
+}
+
+.char-form-link {
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    color: green;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.char-form-error {
+    margin-top: 30px;
+    color: red;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 input {
