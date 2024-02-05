@@ -1,0 +1,35 @@
+.char-form {
+    margin-top: 50px;
+    padding: 30px;
+}
+
+.char-form-block {
+    display: flex;
+    flex-direction: column;
+}
+.char-form-items {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.error-message {
+    position: absolute;
+    top: 45px;
+    left: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    color: red;
+}
+
+input {
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+    outline: none;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}

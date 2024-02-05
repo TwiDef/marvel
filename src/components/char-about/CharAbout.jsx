@@ -8,6 +8,7 @@ import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import './CharAbout.css';
 import CharAboutSkeleton from './char-about-skeleton/CharAboutSkeleton';
+import CharForm from '../char-form/CharForm';
 
 const CharAbout = (props) => {
 
@@ -58,6 +59,7 @@ const CharAbout = (props) => {
             {skeleton}
             {spinner}
             {content}
+            <CharForm />
         </div>
     );
 }
