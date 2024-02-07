@@ -46,7 +46,6 @@ const useMarvelService = () => {
     }
 
     const _transformCharacter = (character) => {
-
         return {
             name: character.name,
             id: character.id,
@@ -60,8 +59,6 @@ const useMarvelService = () => {
             wiki: character.urls[1].url,
             comics: character.comics.items
         }
-
-
     }
 
     return { loading, error, getAllCharacters, getCharacter, getCharacterByName, clearError, getAllComics, getComic }

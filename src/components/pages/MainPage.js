@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Hemlet from 'react-helmet';
+
 import CharCards from './../char-cards/CharCards';
 import CharAbout from './../char-about/CharAbout';
 import HeaderInfo from './../header/header-info/HeaderInfo';
@@ -13,7 +15,16 @@ const MainPage = (props) => {
 
     return (
         <>
-            <HeaderInfo />
+            <Hemlet>
+                <meta
+                    name="description"
+                    content="Marvel information portal" />
+                <title>Marvel information portal</title>
+            </Hemlet>
+
+            <ErrorBoundary>
+                <HeaderInfo />
+            </ErrorBoundary>
             <section className='main'>
                 <CharCards onCharSelected={onCharSelected} />
                 <ErrorBoundary>

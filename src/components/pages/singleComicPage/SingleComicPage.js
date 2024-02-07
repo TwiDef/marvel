@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import Hemlet from 'react-helmet';
 import useMarvelService from '../../../services/MarvelService';
+
 import Banner from '../../banner/Banner';
 import Spinner from '../../spinner/Spinner';
 import ErrorMessage from '../../errorMessage/ErrorMessage';
+
 import './SingleComicPage.css';
 
 const SingleComicPage = () => {
@@ -31,6 +34,13 @@ const SingleComicPage = () => {
 
     return (
         <>
+            <Hemlet>
+                <meta
+                    name="description"
+                    content="Page with single comic" />
+                <title>{comic.title}</title>
+            </Hemlet>
+
             <Banner />
             {errorMessage}
             {spinner}

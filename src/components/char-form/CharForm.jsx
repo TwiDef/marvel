@@ -9,7 +9,7 @@ import useMarvelService from '../../services/MarvelService';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 
 const CharForm = () => {
-    const { getCharacterByName, loading, error, clearError } = useMarvelService()
+    const { getCharacterByName, error, clearError } = useMarvelService()
     const [char, setChar] = useState(null)
 
     const onCharLoaded = (char) => {
@@ -28,7 +28,7 @@ const CharForm = () => {
     const result = !char ? null : char.length > 0 ?
         <div className='char-form-link'>
             {`There is! Visit ${char[0].name} page?`}
-            <Link to={`/${char[0].id}`}>
+            <Link to={`/characters/${char[0].id}`}>
                 <Button text={"TO PAGE"} />
             </Link>
         </div> :
